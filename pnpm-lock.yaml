@@ -427,6 +427,159 @@ importers:
       typechain: 8.0.0_typescript@4.7.2
       typescript: 4.7.2
 
+  apps/miso:
+    specifiers:
+      '@ethersproject/abi': ^5.0.0
+      '@ethersproject/abstract-provider': ^5.0.0
+      '@ethersproject/address': ^5.0.0
+      '@ethersproject/bignumber': ^5.0.0
+      '@ethersproject/bytes': ^5.0.0
+      '@ethersproject/constants': ^5.0.0
+      '@ethersproject/contracts': ^5.0.0
+      '@ethersproject/hash': ^5.0.0
+      '@ethersproject/providers': ^5.0.0
+      '@ethersproject/solidity': ^5.0.0
+      '@ethersproject/strings': ^5.0.0
+      '@ethersproject/units': ^5.0.0
+      '@graphprotocol/client-add-source-name': 1.0.2
+      '@graphprotocol/client-cli': 2.0.2
+      '@headlessui/react': ^1.6.6
+      '@heroicons/react': ^1.0.0
+      '@hookform/resolvers': ^2.8.10
+      '@reduxjs/toolkit': ^1.8.1
+      '@sushiswap/bentobox': workspace:*
+      '@sushiswap/chain': workspace:*
+      '@sushiswap/currency': workspace:*
+      '@sushiswap/eslint-config': workspace:*
+      '@sushiswap/format': workspace:*
+      '@sushiswap/graph-client': workspace:*
+      '@sushiswap/hooks': workspace:*
+      '@sushiswap/jest-config': workspace:*
+      '@sushiswap/log': workspace:*
+      '@sushiswap/math': workspace:*
+      '@sushiswap/miso': 1.0.0-canary.47
+      '@sushiswap/prettier-config': workspace:*
+      '@sushiswap/redux-localstorage': workspace:*
+      '@sushiswap/redux-token-lists': workspace:*
+      '@sushiswap/typescript-config': workspace:*
+      '@sushiswap/ui': workspace:*
+      '@sushiswap/wagmi': workspace:*
+      '@tanstack/react-table': 8.0.0-alpha.87
+      '@types/node': 17.0.30
+      '@types/react': ^18.0.9
+      '@types/react-dom': ^18.0.4
+      '@uniswap/redux-multicall': ^1.1.1
+      '@uniswap/token-lists': ^1.0.0-beta.29
+      '@visx/curve': ^2.1.0
+      '@visx/gradient': ^2.1.0
+      '@visx/group': ^2.1.0
+      '@visx/react-spring': ^2.6.0
+      '@visx/scale': ^2.2.2
+      '@visx/shape': ^2.4.0
+      '@visx/text': ^2.3.0
+      '@visx/tooltip': ^2.8.0
+      '@visx/xychart': ^2.9.0
+      ajv: ^6.12.6
+      autoprefixer: ^10.4.5
+      cids: ^1.0.0
+      date-fns: ^2.28.0
+      eslint: ^8.15.0
+      ethers: ^5.0.0
+      graphql: ^16.5.0
+      next: ^12.1.6
+      next-transpile-modules: 9.0.0
+      postcss: ^8.4.12
+      react: ^18.1.0
+      react-dom: ^18.1.0
+      react-hook-form: ^7.31.1
+      react-redux: ^8.0.1
+      react-spring: ^9.4.4
+      redux-devtools-extension: ^2.13.9
+      redux-persist: ^6.0.0
+      swr: ^1.3.0
+      tailwindcss: ^3.0.24
+      typechain: ^8.0.0
+      typescript: ^4.0.0
+      wagmi: ^0.5.9
+      yup: ^0.32.11
+      zustand: 4.0.0-rc.2
+    dependencies:
+      '@ethersproject/abi': 5.6.4
+      '@ethersproject/abstract-provider': 5.6.1
+      '@ethersproject/address': 5.6.1
+      '@ethersproject/bignumber': 5.6.2
+      '@ethersproject/bytes': 5.6.1
+      '@ethersproject/constants': 5.6.1
+      '@ethersproject/contracts': 5.6.2
+      '@ethersproject/hash': 5.6.1
+      '@ethersproject/providers': 5.6.8
+      '@ethersproject/solidity': 5.6.1
+      '@ethersproject/strings': 5.6.1
+      '@ethersproject/units': 5.6.1
+      '@headlessui/react': 1.6.6_ef5jwxihqo6n7gxfmzogljlgcm
+      '@heroicons/react': 1.0.6_react@18.1.0
+      '@hookform/resolvers': 2.8.10_react-hook-form@7.31.1
+      '@reduxjs/toolkit': 1.8.1_j24pcqpkbsj43woxscsovlj4au
+      '@sushiswap/bentobox': link:../../protocols/bentobox/v1
+      '@sushiswap/chain': link:../../packages/chain
+      '@sushiswap/currency': link:../../packages/currency
+      '@sushiswap/format': link:../../packages/format
+      '@sushiswap/graph-client': link:../../packages/graph-client
+      '@sushiswap/hooks': link:../../packages/hooks
+      '@sushiswap/log': link:../../packages/log
+      '@sushiswap/math': link:../../packages/math
+      '@sushiswap/miso': 1.0.0-canary.47
+      '@sushiswap/redux-localstorage': link:../../packages/redux/localstorage
+      '@sushiswap/redux-token-lists': link:../../packages/redux/token-lists
+      '@sushiswap/ui': link:../../packages/ui
+      '@sushiswap/wagmi': link:../../packages/wagmi
+      '@tanstack/react-table': 8.0.0-alpha.87_ef5jwxihqo6n7gxfmzogljlgcm
+      '@uniswap/redux-multicall': 1.1.1_vh6llgsf24ubr5swqe35bzcngm
+      '@uniswap/token-lists': 1.0.0-beta.29
+      '@visx/curve': 2.1.0
+      '@visx/gradient': 2.10.0_react@18.1.0
+      '@visx/group': 2.10.0_react@18.1.0
+      '@visx/react-spring': 2.10.0_5dsgva2amtpeu2wd4aluahztam
+      '@visx/scale': 2.2.2
+      '@visx/shape': 2.10.0_react@18.1.0
+      '@visx/text': 2.10.0_react@18.1.0
+      '@visx/tooltip': 2.10.0_ef5jwxihqo6n7gxfmzogljlgcm
+      '@visx/xychart': 2.10.0_gitgatcfdebknnmmc4e6ohrlui
+      ajv: 6.12.6
+      cids: 1.1.9
+      date-fns: 2.28.0
+      ethers: 5.6.9
+      graphql: 16.5.0
+      next: 12.1.6_ef5jwxihqo6n7gxfmzogljlgcm
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
+      react-hook-form: 7.31.1_react@18.1.0
+      react-redux: 8.0.1_e6senhi6gkhdouiqizr2s56gsi
+      react-spring: 9.4.5_ef5jwxihqo6n7gxfmzogljlgcm
+      redux-devtools-extension: 2.13.9
+      redux-persist: 6.0.0_react@18.1.0
+      swr: 1.3.0_react@18.1.0
+      wagmi: 0.5.9_4guzfpg65vmwyxlmcox62jbgfi
+      yup: 0.32.11
+      zustand: 4.0.0-rc.2_react@18.1.0
+    devDependencies:
+      '@graphprotocol/client-add-source-name': 1.0.2_graphql@16.5.0
+      '@graphprotocol/client-cli': 2.0.2_5oakmjw4u6xo53ovhbwqqaekie
+      '@sushiswap/eslint-config': link:../../packages/config/eslint
+      '@sushiswap/jest-config': link:../../packages/config/jest
+      '@sushiswap/prettier-config': link:../../packages/config/prettier
+      '@sushiswap/typescript-config': link:../../packages/config/typescript
+      '@types/node': 17.0.30
+      '@types/react': 18.0.9
+      '@types/react-dom': 18.0.4
+      autoprefixer: 10.4.7_postcss@8.4.14
+      eslint: 8.19.0
+      next-transpile-modules: 9.0.0
+      postcss: 8.4.14
+      tailwindcss: 3.0.24
+      typechain: 8.0.0_typescript@4.7.4
+      typescript: 4.7.4
+
   apps/swap:
     specifiers:
       '@builder.io/partytown': ^0.6.1
@@ -5942,6 +6095,10 @@ packages:
     resolution: {integrity: sha512-MWxe+AkMiCbFdeSF0kc1QyX9piFsVb8GDSU9BA8m6NjvhmSnRQ2sTBjIUzHQj4nf7MJX49RE6idUsT1aG2URYg==}
     dev: false
 
+  /@sushiswap/miso/1.0.0-canary.47:
+    resolution: {integrity: sha512-bEDm9ZDE8jh1A+edGnYYH8dTNHytel7sk6k8EKS42Xw0szrjghWMq7HbOQ3PXrMFj2ChDOz/g6G3DZ0JrJasGA==}
+    dev: false
+
   /@sushiswap/sushi-data/1.0.26:
     resolution: {integrity: sha512-zGAL3un1K8J+mc4GyMhjOdJHYsnuwh7WiP4zlgvGyz1FJbFvnkv6NaKqh1bLAVCJDTZRFBZCzty7qp+6kX+nJw==}
     dependencies:
@@ -6731,6 +6888,25 @@ packages:
       react-redux: 8.0.1_e6senhi6gkhdouiqizr2s56gsi
     dev: false
 
+  /@uniswap/redux-multicall/1.1.1_vh6llgsf24ubr5swqe35bzcngm:
+    resolution: {integrity: sha512-sXX2pAbxJj1OrErSc7zMEFo7j1EXqTBbllYuUDEWCZ/A12sK/4RXgXW2+zSoXOHCN6djyVUc3FmEt0v3x2jLSw==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      '@ethersproject/abi': '5'
+      '@ethersproject/bignumber': '5'
+      '@ethersproject/contracts': '5'
+      '@reduxjs/toolkit': '1'
+      react: '17'
+      react-redux: '7'
+    dependencies:
+      '@ethersproject/abi': 5.6.4
+      '@ethersproject/bignumber': 5.6.2
+      '@ethersproject/contracts': 5.6.2
+      '@reduxjs/toolkit': 1.8.1_j24pcqpkbsj43woxscsovlj4au
+      react: 18.1.0
+      react-redux: 8.0.1_e6senhi6gkhdouiqizr2s56gsi
+    dev: false
+
   /@uniswap/token-lists/1.0.0-beta.29:
     resolution: {integrity: sha512-b19mDY5G94GW9tKjvoNEbdApWM1GNahh5EFYs7LsBE7J3r7qNsJ6MqZYoPg73KS6GOrp8/2XdcSXRBUt6NHjZg==}
     engines: {node: '>=10'}
@@ -7066,6 +7242,28 @@ packages:
       react-spring: 9.4.5_ef5jwxihqo6n7gxfmzogljlgcm
     transitivePeerDependencies:
       - react-dom
+    dev: false
+
+  /@wagmi/core/0.4.7_q45v7wxmmp2eib4fr6ra2nda2u:
+    resolution: {integrity: sha512-YpD9bxE22qV1vhCKDy18Yq5B6ArRRH15XpMnZhB/1Hdbk9nLK1heSJ1HoCetn1uCxrdUByTAzlmuxL3FbeXM5A==}
+    peerDependencies:
+      '@coinbase/wallet-sdk': '>=3.3.0'
+      '@walletconnect/ethereum-provider': '>=1.7.5'
+      ethers: '>=5.5.1'
+    peerDependenciesMeta:
+      '@coinbase/wallet-sdk':
+        optional: true
+      '@walletconnect/ethereum-provider':
+        optional: true
+    dependencies:
+      '@coinbase/wallet-sdk': 3.3.0
+      '@walletconnect/ethereum-provider': 1.7.8
+      ethers: 5.6.9
+      eventemitter3: 4.0.7
+      zustand: 4.0.0-rc.2_react@18.1.0
+    transitivePeerDependencies:
+      - immer
+      - react
     dev: false
 
   /@wagmi/core/0.4.7_vh6lecw7jiv7vbsmg2rhwrxg4u:
@@ -8732,7 +8930,7 @@ packages:
   /browserify-rsa/4.1.0:
     resolution: {integrity: sha512-AdEER0Hkspgno2aR97SAf6vi0y0k8NuOpGnVH3O99rcA5Q6sh8QxcngtHuJ6uXwnfAXNM4Gn1Gb7/MV1+Ymbog==}
     dependencies:
-      bn.js: 5.2.0
+      bn.js: 5.2.1
       randombytes: 2.1.0
     dev: false
     optional: true
@@ -10072,7 +10270,7 @@ packages:
     dev: false
 
   /defined/1.0.0:
-    resolution: {integrity: sha1-yY2bzvdWdBiOEQlpFRGZ45sfppM=}
+    resolution: {integrity: sha512-Y2caI5+ZwS5c3RiNDJ6u53VhQHv+hHKwhkI1iHvceKUHw9Df6EK2zRLfjejRgMuCuxK7PfSWIMwWecceVvThjQ==}
 
   /delayed-stream/1.0.0:
     resolution: {integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=}
@@ -13097,7 +13295,7 @@ packages:
     dev: false
 
   /hmac-drbg/1.0.1:
-    resolution: {integrity: sha1-0nRXAQJabHdabFRXk+1QL8DGSaE=}
+    resolution: {integrity: sha512-Tti3gMqLdZfhOQY1Mzf/AanLiqh1WTiJgEj26ZuYQ9fbkLomzGchCws4FyrSd4VkpBfiNhaE1On+lOz894jvXg==}
     dependencies:
       hash.js: 1.1.7
       minimalistic-assert: 1.0.1
@@ -15494,7 +15692,7 @@ packages:
     dev: false
 
   /lodash.camelcase/4.3.0:
-    resolution: {integrity: sha1-soqmKIorn8ZRA1x3EfZathkDMaY=}
+    resolution: {integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==}
 
   /lodash.castarray/4.4.0:
     resolution: {integrity: sha1-wCUTUV4wna3dTCTGDP3c9ZdtkRU=}
@@ -16173,7 +16371,7 @@ packages:
     resolution: {integrity: sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==}
 
   /minimalistic-crypto-utils/1.0.1:
-    resolution: {integrity: sha1-9sAMHAsIIkblxNmd+4x8CDsrWCo=}
+    resolution: {integrity: sha512-JIYlbt6g8i5jKfJ3xz7rF0LXmv2TkDxBLUkiBeZ7bAx4GnnNMr8xFpGnOxn6GhTEHx3SjRrZEoU+j04prX1ktg==}
 
   /minimatch/3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
@@ -16682,7 +16880,7 @@ packages:
     engines: {node: '>=0.10.0'}
 
   /normalize-range/0.1.2:
-    resolution: {integrity: sha1-LRDAa9/TEuqXd2laTShDlFa3WUI=}
+    resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==}
     engines: {node: '>=0.10.0'}
     dev: true
 
@@ -17335,7 +17533,7 @@ packages:
         optional: true
     dependencies:
       lilconfig: 2.0.5
-      ts-node: 10.8.2_typescript@4.7.4
+      ts-node: 10.8.2_smgpfffxrhk5i4ijhe3532b4hq
       yaml: 1.10.2
     dev: true
 
@@ -17428,7 +17626,6 @@ packages:
     resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
     engines: {node: '>=10.13.0'}
     hasBin: true
-    dev: true
 
   /pretty-bytes/5.6.0:
     resolution: {integrity: sha512-FFw039TmrBqFK8ma/7OL3sDz/VytdtJr044/QUJtH0wK9lb9jLq9tJyIxUwtQJHwar2BqtiA4iCWSwo9JLkzFg==}
@@ -17829,7 +18026,7 @@ packages:
       match-sorter: 6.3.1
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
-      use-sync-external-store: 1.1.0_react@18.1.0
+      use-sync-external-store: 1.2.0_react@18.1.0
 
   /react-redux/8.0.1_e6senhi6gkhdouiqizr2s56gsi:
     resolution: {integrity: sha512-LMZMsPY4DYdZfLJgd7i79n5Kps5N9XVLCJJeWAaPYTV+Eah2zTuBjTxKtNEbjiyitbq80/eIkm55CYSLqAub3w==}
@@ -19756,6 +19953,14 @@ packages:
     dependencies:
       typescript: 4.7.2
 
+  /ts-essentials/7.0.3_typescript@4.7.4:
+    resolution: {integrity: sha512-8+gr5+lqO3G84KdiTSMRLtuyJ+nTBVRKuCrK4lidMPdVeEp0uqC875uE5NMcaA7YYMN7XsNiFQuMvasF8HT/xQ==}
+    peerDependencies:
+      typescript: '>=3.7.0'
+    dependencies:
+      typescript: 4.7.4
+    dev: true
+
   /ts-generator/0.1.1:
     resolution: {integrity: sha512-N+ahhZxTLYu1HNTQetwWcx3so8hcYbkKBHTr4b4/YgObFTIKkOSSsaa+nal12w8mfrJAyzJfETXawbNjSfP2gQ==}
     hasBin: true
@@ -20530,13 +20735,12 @@ packages:
       js-sha3: 0.8.0
       lodash: 4.17.21
       mkdirp: 1.0.4
-      prettier: 2.6.2
+      prettier: 2.7.1
       ts-command-line-args: 2.3.1
       ts-essentials: 7.0.3_typescript@4.6.4
       typescript: 4.6.4
     transitivePeerDependencies:
       - supports-color
-    dev: false
 
   /typechain/8.0.0_typescript@4.7.2:
     resolution: {integrity: sha512-rqDfDYc9voVAhmfVfAwzg3VYFvhvs5ck1X9T/iWkX745Cul4t+V/smjnyqrbDzWDbzD93xfld1epg7Y/uFAesQ==}
@@ -20551,12 +20755,33 @@ packages:
       js-sha3: 0.8.0
       lodash: 4.17.21
       mkdirp: 1.0.4
-      prettier: 2.6.2
+      prettier: 2.7.1
       ts-command-line-args: 2.3.1
       ts-essentials: 7.0.3_typescript@4.7.2
       typescript: 4.7.2
     transitivePeerDependencies:
       - supports-color
+
+  /typechain/8.0.0_typescript@4.7.4:
+    resolution: {integrity: sha512-rqDfDYc9voVAhmfVfAwzg3VYFvhvs5ck1X9T/iWkX745Cul4t+V/smjnyqrbDzWDbzD93xfld1epg7Y/uFAesQ==}
+    hasBin: true
+    peerDependencies:
+      typescript: '>=4.3.0'
+    dependencies:
+      '@types/prettier': 2.6.1
+      debug: 4.3.4
+      fs-extra: 7.0.1
+      glob: 7.1.7
+      js-sha3: 0.8.0
+      lodash: 4.17.21
+      mkdirp: 1.0.4
+      prettier: 2.7.1
+      ts-command-line-args: 2.3.1
+      ts-essentials: 7.0.3_typescript@4.7.4
+      typescript: 4.7.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /typedarray-to-buffer/3.1.5:
     resolution: {integrity: sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==}
@@ -20856,6 +21081,13 @@ packages:
     dependencies:
       react: 18.1.0
 
+  /use-sync-external-store/1.2.0_react@18.1.0:
+    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.1.0
+
   /use/3.1.1:
     resolution: {integrity: sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==}
     engines: {node: '>=0.10.0'}
@@ -20997,6 +21229,31 @@ packages:
       is-buffer: 2.0.5
       unist-util-stringify-position: 3.0.2
       vfile-message: 3.1.2
+    dev: false
+
+  /wagmi/0.5.9_4guzfpg65vmwyxlmcox62jbgfi:
+    resolution: {integrity: sha512-B9wL+1J3J/9sVqj3DMJtTYuBSx0QdFFu6QwPlw2zVvB995lWivG2vABTYwoWuyUbXwcVvSVHEgPyFBRx5zoPqw==}
+    peerDependencies:
+      ethers: '>=5.5.1'
+      react: '>=17.0.0'
+    dependencies:
+      '@coinbase/wallet-sdk': 3.3.0
+      '@wagmi/core': 0.4.7_q45v7wxmmp2eib4fr6ra2nda2u
+      '@walletconnect/ethereum-provider': 1.7.8
+      ethers: 5.6.9
+      react: 18.1.0
+      react-query: 4.0.0-beta.23_ef5jwxihqo6n7gxfmzogljlgcm
+      use-sync-external-store: 1.1.0_react@18.1.0
+    transitivePeerDependencies:
+      - '@babel/core'
+      - bufferutil
+      - debug
+      - encoding
+      - immer
+      - react-dom
+      - react-native
+      - supports-color
+      - utf-8-validate
     dev: false
 
   /wagmi/0.5.9_psvhf2bcekgpduwaw7lrstqk6m:
@@ -21864,6 +22121,22 @@ packages:
     dependencies:
       react: 18.1.0
       use-sync-external-store: 1.1.0_react@18.1.0
+
+  /zustand/4.0.0-rc.2_react@18.1.0:
+    resolution: {integrity: sha512-eGDJHNmubDTggkMyZciCfI0H+NptOKQICpliJ4hd/XAjEvYp5h525CVJZ8uDfwd9P5JfSFjpBo14Z0qv04NWJA==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      immer: '>=9.0'
+      react: '>=16.8'
+    peerDependenciesMeta:
+      immer:
+        optional: true
+      react:
+        optional: true
+    dependencies:
+      react: 18.1.0
+      use-sync-external-store: 1.2.0_react@18.1.0
+    dev: false
 
   github.com/LufyCZ/graph-results-pager/9b230f05b8d79aeedc9e167ac5a1fea33e04d51f:
     resolution: {tarball: https://codeload.github.com/LufyCZ/graph-results-pager/tar.gz/9b230f05b8d79aeedc9e167ac5a1fea33e04d51f}
