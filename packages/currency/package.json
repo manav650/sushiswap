@@ -1,7 +1,6 @@
 {
   "name": "@sushiswap/currency",
-  "version": "0.0.0-20220802135637",
-  "private": true,
+  "version": "0.0.0-20220802141134",
   "description": "Sushi Currency",
   "keywords": [
     "sushi",

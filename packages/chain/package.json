@@ -1,7 +1,6 @@
 {
   "name": "@sushiswap/chain",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.0-20220802141134",
   "description": "Sushi Chain",
   "keywords": [
     "sushi",
@@ -20,7 +19,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "tsc -w",
     "generate": "ls chains.json || curl 'https://chainid.network/chains.json' > chains.json",
-    "preinstall": "pnpm run generate",
+    "preinstall": "ls chains.json || curl 'https://chainid.network/chains.json' > chains.json",
     "lint": "TIMING=1 eslint ./index.ts --fix",
     "test": "jest --passWithNoTests"
   },
