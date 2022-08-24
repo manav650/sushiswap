@@ -1,0 +1,107 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "defaultTitle",
+    "description": "defaultDescription",
+    "version": "0.1"
+  },
+  "servers": [
+    {
+      "url": "https://run.mocky.io"
+    }
+  ],
+  "paths": {
+    "/v3/af5d42dc-0769-43ac-9713-624238468cb8": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector"
+          }
+        },
+        "servers": [
+          {
+            "url": "https://run.mocky.io"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://run.mocky.io"
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "Chains": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Chain"
+        }
+      },
+      "Chain": {
+        "type": "object",
+        "properties": {
+          "chainId": {
+            "type": "integer"
+          },
+          "farms": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Farm"
+            }
+          }
+        }
+      },
+      "Farm": {
+        "type": "object",
+        "properties": {
+          "feeApy": {
+            "type": "number"
+          },
+          "incentives": {
+            "type": "array",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Incentive"
+            },
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "Incentive": {
+        "type": "object",
+        "properties": {
+          "apr": {
+            "type": "number"
+          },
+          "rewardPerDay": {
+            "type": "number"
+          },
+          "rewardToken": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Token"
+            }
+          }
+        }
+      },
+      "Token": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "decimals": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

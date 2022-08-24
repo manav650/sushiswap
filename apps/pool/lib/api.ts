@@ -1,7 +1,7 @@
 import { chainShortNameToChainId } from '@sushiswap/chain'
 import { getUnixTime, subMonths, subYears } from 'date-fns'
 
-import { CrossChainFarmsQuery, QuerypairsArgs } from '../.graphclient'
+import {  QuerypairsArgs } from '../.graphclient'
 import { AMM_ENABLED_NETWORKS, STAKING_ENABLED_NETWORKS, SUPPORTED_CHAIN_IDS } from '../config'
 
 export const getBundles = async () => {
@@ -87,19 +87,7 @@ export const getSushiBar = async (blockNumber?: number) => {
   return blockNumber ? (await sdk.Bar({ block: { number: blockNumber } })).bar : (await sdk.Bar()).bar
 }
 
-export const getFarms = async (query?: CrossChainFarmsQuery) => {
-  const { getBuiltGraphSDK } = await import('../.graphclient')
-  const sdk = getBuiltGraphSDK()
 
-  const { farms } = await sdk.CrossChainFarms({
-    chainIds: STAKING_ENABLED_NETWORKS,
-    first: 20,
-    skip: 0,
-    ...query,
-  })
-
-  return farms
-}
 
 type GetUserQuery = Partial<{
   id: string

@@ -7,7 +7,7 @@ import {
   TRIDENT_SUBGRAPH_NAME,
 } from 'config'
 
-import { Resolvers } from '.graphclient'
+import { getBuiltGraphSDK, getSdk, Resolvers } from '.graphclient'
 
 export const resolvers: Resolvers = {
   Pair: {
@@ -17,10 +17,6 @@ export const resolvers: Resolvers = {
     chainShortName: (root, args, context, info) => root.chainShortName || context.chainShortName || 'eth',
   },
   Bundle: {
-    chainId: (root, args, context, info) => root.chainId || context.chainId || 1,
-    chainName: (root, args, context, info) => root.chainName || context.chainName || 'Ethereum',
-  },
-  Farm: {
     chainId: (root, args, context, info) => root.chainId || context.chainId || 1,
     chainName: (root, args, context, info) => root.chainName || context.chainName || 'Ethereum',
   },
@@ -73,6 +69,8 @@ export const resolvers: Resolvers = {
       })
     },
     crossChainPairs: async (root, args, context, info) => {
+      const farms = await (await getBuiltGraphSDK().Farms()).v3_af5d42dc_0769_43ac_9713_624238468cb8
+      console.log({farms})
       const transformer = (pools, chainId) =>
         pools.map((pool) => {
           const volume7d = pool.daySnapshots?.reduce((previousValue, currentValue, i) => {
@@ -89,7 +87,7 @@ export const resolvers: Resolvers = {
             chainShortName: chainShortName[chainId],
           }
         })
-
+      // TODO: zip down below?
       return Promise.all([
         ...args.chainIds
           .filter((el) => TRIDENT_ENABLED_NETWORKS.includes(el))

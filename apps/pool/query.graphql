@@ -7,6 +7,10 @@ query CrossChainBundles($first: Int = 1000, $chainIds: [BigInt!]!) {
   }
 }
 
+query Farms {
+  v3_af5d42dc_0769_43ac_9713_624238468cb8
+}
+
 query CrossChainPairs(
   $first: Int = 20
   $skip: Int = 0
@@ -234,53 +238,53 @@ query Bar($block: Block_height, $id: String = "0x8798249c2e607446efb7ad49ec89dd1
   }
 }
 
-query CrossChainFarms($first: Int = 1000, $skip: Int = 0, $where: Pair_filter, $orderBy: Pair_orderBy, $orderDirection: OrderDirection $block: Block_height, $chainIds: [BigInt!]!) {
-  farms {
-    id
-    chainId
-    chainName
-    stakeToken {
-      id
-      name
-      symbol
-      decimals
-      type
-      assets
-    }
-    incentives {
-      id
-      rewardsAccrued
-      rewardsRemaining
-      liquidityStaked
-      stakeToken {
-        id
-        name
-        symbol
-        decimals
-        type
-        assets
-      }
-      rewardToken {
-        id
-        name
-        symbol
-        decimals
-        type
-      }
-      createdBy {
-        id
-      }
-      startTime
-      endTime
-      createdAtBlock
-      createdAtTimestamp
-      modifiedAtBlock
-      modifiedAtTimestamp
-      rewardsUpdatedAtBlock
-      rewardsUpdatedAtTimestamp
-    }
-  }
-}
+# query CrossChainFarms($first: Int = 1000, $skip: Int = 0, $where: Pair_filter, $orderBy: Pair_orderBy, $orderDirection: OrderDirection $block: Block_height, $chainIds: [BigInt!]!) {
+#   farms {
+#     id
+#     chainId
+#     chainName
+#     stakeToken {
+#       id
+#       name
+#       symbol
+#       decimals
+#       type
+#       assets
+#     }
+#     incentives {
+#       id
+#       rewardsAccrued
+#       rewardsRemaining
+#       liquidityStaked
+#       stakeToken {
+#         id
+#         name
+#         symbol
+#         decimals
+#         type
+#         assets
+#       }
+#       rewardToken {
+#         id
+#         name
+#         symbol
+#         decimals
+#         type
+#       }
+#       createdBy {
+#         id
+#       }
+#       startTime
+#       endTime
+#       createdAtBlock
+#       createdAtTimestamp
+#       modifiedAtBlock
+#       modifiedAtTimestamp
+#       rewardsUpdatedAtBlock
+#       rewardsUpdatedAtTimestamp
+#     }
+#   }
+# }
 
 # query UserSubscribedIncentives($id: ID!) {
 #   user(id: $id) {
