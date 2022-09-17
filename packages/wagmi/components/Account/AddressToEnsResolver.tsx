@@ -12,9 +12,9 @@ export const AddressToEnsResolver = ({
   children,
   onSuccess,
   chainId = ChainId.ETHEREUM,
-  ...props
+  address,
 }: Props): JSX.Element => {
-  const result = useEnsName({ ...props, chainId })
+  const result = useEnsName({ address, chainId })
 
   // Custom onSuccess callback to send success data with resolved result
   useEffect(() => {

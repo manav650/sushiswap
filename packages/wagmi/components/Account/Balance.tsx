@@ -18,7 +18,7 @@ export type Props = {
 export const Balance: FC<Props> = ({ address, supportedNetworks, children }) => {
   const { chain } = useNetwork()
   const isMounted = useIsMounted()
-  const { data, isError, isLoading } = useBalance({ addressOrName: address, enabled: !!address })
+  const { data, isError, isLoading } = useBalance({ addressOrName: address, enabled: false })
 
   return useMemo(() => {
     const content = isLoading ? (

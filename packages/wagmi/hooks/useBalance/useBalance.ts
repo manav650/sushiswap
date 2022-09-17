@@ -1,7 +1,7 @@
 import { isAddress } from '@ethersproject/address'
 import { AddressZero } from '@ethersproject/constants'
 import { ChainId } from '@sushiswap/chain'
-import { Amount, Native, Token, Type } from '@sushiswap/currency'
+import { Amount, Token, Type } from '@sushiswap/currency'
 import { FundSource } from '@sushiswap/hooks'
 import { JSBI, ZERO } from '@sushiswap/math'
 import { useMemo } from 'react'
@@ -26,17 +26,17 @@ type UseBalances = (params: UseBalancesParams) => (
 }
 
 export const useBalances: UseBalances = ({ enabled = true, chainId, account, currencies, loadBentobox = false }) => {
-  const {
-    data: nativeBalance,
-    isLoading: isNativeLoading,
-    isError: isNativeError,
-  } = useWagmiBalance({
-    addressOrName: account,
-    chainId,
-    enabled,
-    watch: !(typeof enabled !== undefined && !enabled),
-    keepPreviousData: true,
-  })
+  // const {
+  //   data: nativeBalance,
+  //   isLoading: isNativeLoading,
+  //   isError: isNativeError,
+  // } = useWagmiBalance({
+  //   addressOrName: account,
+  //   chainId,
+  //   enabled,
+  //   watch: !(typeof enabled !== undefined && !enabled),
+  //   keepPreviousData: true,
+  // })
 
   const [validatedTokens, validatedTokenAddresses] = useMemo(
     () =>
@@ -138,23 +138,23 @@ export const useBalances: UseBalances = ({ enabled = true, chainId, account, cur
   }, [contracts.length, data, loadBentobox, validatedTokenAddresses.length, validatedTokens])
 
   return useMemo(() => {
-    tokens[AddressZero] = {
-      [FundSource.WALLET]:
-        chainId && nativeBalance?.value
-          ? Amount.fromRawAmount(Native.onChain(chainId), nativeBalance.value.toString())
-          : undefined,
-      [FundSource.BENTOBOX]:
-        chainId && tokens[Native.onChain(chainId).wrapped.address]
-          ? tokens[Native.onChain(chainId).wrapped.address][FundSource.BENTOBOX]
-          : undefined,
-    }
+    // tokens[AddressZero] = {
+    //   [FundSource.WALLET]:
+    //     chainId && nativeBalance?.value
+    //       ? Amount.fromRawAmount(Native.onChain(chainId), nativeBalance.value.toString())
+    //       : undefined,
+    //   [FundSource.BENTOBOX]:
+    //     chainId && tokens[Native.onChain(chainId).wrapped.address]
+    //       ? tokens[Native.onChain(chainId).wrapped.address][FundSource.BENTOBOX]
+    //       : undefined,
+    // }
 
     return {
       data: tokens,
-      isLoading: isLoading || isNativeLoading,
-      isError: isError || isNativeError,
+      isLoading: isLoading,
+      isError: isError,
     }
-  }, [tokens, chainId, nativeBalance?.value, isLoading, isNativeLoading, isError, isNativeError])
+  }, [tokens, isLoading, isError])
 }
 
 type UseBalanceParams = {
