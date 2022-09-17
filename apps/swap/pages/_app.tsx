@@ -1,11 +1,12 @@
 import '@sushiswap/ui/index.css'
 
-import { SUPPORTED_CHAIN_IDS } from 'config'
 import type { AppProps } from 'next/app'
 import React, { FC } from 'react'
 import { allChains, configureChains, createClient, WagmiConfig } from 'wagmi'
 import { alchemyProvider } from 'wagmi/providers/alchemy'
 import { publicProvider } from 'wagmi/providers/public'
+
+import { useBalances } from './useBalances'
 
 const alchemyId = 'KvKHCWsYw5iH9PxuMI0qdvCsiOLxv4zn'
 
@@ -23,20 +24,19 @@ const client = createClient({
 const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <WagmiConfig client={client}>
-      {/*<Provider store={store}>*/}
-      {/*<ThemeProvider>*/}
-      {/*  <App.Shell>*/}
-      {/*<Header />*/}
-      {/*<MulticallUpdaters chainIds={SUPPORTED_CHAIN_IDS} />*/}
-      {/*<TokenListsUpdaters chainIds={SUPPORTED_CHAIN_IDS} />*/}
-      <Component {...pageProps} chainIds={SUPPORTED_CHAIN_IDS} />
-      {/*<App.Footer />*/}
-      {/*<ToastContainer className="mt-[50px]" />*/}
-      {/*</App.Shell>*/}
-      {/*</ThemeProvider>*/}
-      {/*</Provider>*/}
+      <TokenUris />
     </WagmiConfig>
   )
+}
+
+function TokenUris() {
+  const data = useBalances({
+    enabled: true,
+    chainId: 42161,
+    account: '0x7a5f66Eb194F629dB12F25bd0695819CB690fcc7',
+  })
+
+  return <div>{JSON.stringify(data)}</div>
 }
 
 export default MyApp
