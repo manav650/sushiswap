@@ -2,7 +2,7 @@ import { SUSHI } from '@sushiswap/currency'
 import { Currency } from '@sushiswap/ui'
 import { FC } from 'react'
 
-import { ICON_SIZE } from './contants'
+import { ICON_SIZE } from '../contants'
 
 interface PairRewardsCell {
   row: {

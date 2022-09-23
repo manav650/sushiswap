@@ -6,10 +6,12 @@ import React, { FC, useEffect, useMemo, useState } from 'react'
 import useSWR from 'swr'
 
 import { usePoolFilters } from '../../../PoolsFiltersProvider'
-import { APR_COLUMN, NAME_COLUMN, NETWORK_COLUMN, PAGE_SIZE, TVL_COLUMN, VOLUME_COLUMN } from '../contants'
+import { APR_COLUMN, NAME_COLUMN, NETWORK_COLUMN, TVL_COLUMN, VOLUME_COLUMN } from '../columns'
+import { PAGE_SIZE } from '../contants'
 import { GenericTable } from '../GenericTable'
 import { PairQuickHoverTooltip } from '../PairQuickHoverTooltip'
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 const COLUMNS = [NETWORK_COLUMN, NAME_COLUMN, TVL_COLUMN, VOLUME_COLUMN, APR_COLUMN]
 
@@ -89,8 +91,8 @@ export const PoolsTable: FC = () => {
     {}
   )
 
-  const table = useReactTable<Pair>({
-    data: pools || [],
+  const table = useReactTable<{ pair: Pair }>({
+    data: pools?.map((pool) => ({ pair: pool })) || [],
     columns: COLUMNS,
     state: {
       sorting,
@@ -117,7 +119,7 @@ export const PoolsTable: FC = () => {
 
   return (
     <>
-      <GenericTable<Pair>
+      <GenericTable<{ pair: Pair }>
         table={table}
         loading={!pools && isValidating}
         HoverElement={isMd ? PairQuickHoverTooltip : undefined}

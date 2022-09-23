@@ -1,19 +1,18 @@
-import { Pair } from '@sushiswap/graph-client/.graphclient'
 import { ColumnDef } from '@tanstack/react-table'
 import React from 'react'
 
-import { PairAPRCell } from './PairAPRCell'
-import { PairChainCell } from './PairChainCell'
-import { PairNameCell } from './PairNameCell'
-import { PairPositionCell } from './PairPositionCell'
-import { PairRewardsCell } from './PairRewardsCell'
-import { PairTVLCell } from './PairTVLCell'
-import { PairVolume24hCell } from './PairVolume24hCell'
+import { PairAPRCell } from './Cells/PairAPRCell'
+import { PairChainCell } from './Cells/PairChainCell'
+import { PairNameCell } from './Cells/PairNameCell'
+import { PairRewardsCell } from './Cells/PairRewardsCell'
+import { PairTVLCell } from './Cells/PairTVLCell'
+import { PairValueCell } from './Cells/PairValueCell'
+import { PairVolume24hCell } from './Cells/PairVolume24hCell'
 
-export const ICON_SIZE = 26
-export const PAGE_SIZE = 20
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Extract<T extends (...args: any) => any> = Parameters<T>[0]['row']
 
-export const NETWORK_COLUMN: ColumnDef<Pair, unknown> = {
+export const NETWORK_COLUMN: ColumnDef<Extract<typeof PairChainCell>, unknown> = {
   id: 'network',
   header: 'Network',
   cell: (props) => <PairChainCell row={props.row.original} />,
@@ -23,7 +22,7 @@ export const NETWORK_COLUMN: ColumnDef<Pair, unknown> = {
   },
 }
 
-export const NAME_COLUMN: ColumnDef<Pair, unknown> = {
+export const NAME_COLUMN: ColumnDef<Extract<typeof PairNameCell>, unknown> = {
   id: 'name',
   header: 'Name',
   cell: (props) => <PairNameCell row={props.row.original} />,
@@ -43,10 +42,10 @@ export const NAME_COLUMN: ColumnDef<Pair, unknown> = {
   },
 }
 
-export const TVL_COLUMN: ColumnDef<Pair, unknown> = {
-  header: 'TVL',
+export const TVL_COLUMN: ColumnDef<Extract<typeof PairTVLCell>, unknown> = {
   id: 'liquidityUSD',
-  accessorFn: (row) => row.liquidityUSD,
+  header: 'TVL',
+  accessorFn: (row) => row.pair.liquidityUSD,
   cell: (props) => <PairTVLCell row={props.row.original} />,
   size: 100,
   meta: {
@@ -55,10 +54,10 @@ export const TVL_COLUMN: ColumnDef<Pair, unknown> = {
   },
 }
 
-export const APR_COLUMN: ColumnDef<Pair, unknown> = {
+export const APR_COLUMN: ColumnDef<Extract<typeof PairAPRCell>, unknown> = {
   id: 'apr',
   header: 'APR',
-  accessorFn: (row) => row.apr,
+  accessorFn: (row) => row.pair.apr,
   cell: (props) => <PairAPRCell row={props.row.original} />,
   size: 100,
   meta: {
@@ -67,7 +66,7 @@ export const APR_COLUMN: ColumnDef<Pair, unknown> = {
   },
 }
 
-export const REWARDS_COLUMN: ColumnDef<Pair, unknown> = {
+export const REWARDS_COLUMN: ColumnDef<Extract<typeof PairRewardsCell>, unknown> = {
   id: 'rewards',
   header: 'Rewards',
   cell: (props) => <PairRewardsCell row={props.row.original} />,
@@ -81,10 +80,14 @@ export const REWARDS_COLUMN: ColumnDef<Pair, unknown> = {
   },
 }
 
-export const POSITION_COLUMN: ColumnDef<Pair, unknown> = {
-  id: 'position',
+export const VALUE_COLUMN: ColumnDef<Extract<typeof PairValueCell>, unknown> = {
+  id: 'valueUSD',
   header: 'Value',
-  cell: (props) => <PairPositionCell row={props.row.original} />,
+  accessorFn: (row) => {
+    console.log('accessed', row.valueUSD)
+    return row.valueUSD
+  },
+  cell: (props) => <PairValueCell row={props.row.original} />,
   size: 100,
   meta: {
     className: 'justify-end',
@@ -92,7 +95,7 @@ export const POSITION_COLUMN: ColumnDef<Pair, unknown> = {
   },
 }
 
-export const VOLUME_COLUMN: ColumnDef<Pair, unknown> = {
+export const VOLUME_COLUMN: ColumnDef<Extract<typeof PairVolume24hCell>, unknown> = {
   id: 'volume',
   header: 'Volume (24h)',
   cell: (props) => <PairVolume24hCell row={props.row.original} />,
