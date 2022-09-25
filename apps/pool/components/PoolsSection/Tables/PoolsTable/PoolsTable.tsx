@@ -91,8 +91,10 @@ export const PoolsTable: FC = () => {
     {}
   )
 
-  const table = useReactTable<{ pair: Pair }>({
-    data: pools?.map((pool) => ({ pair: pool })) || [],
+  const data = useMemo(() => pools?.map((pool) => ({ id: pool.id as string, pair: pool })), [pools])
+
+  const table = useReactTable<NonNullable<typeof data>[0]>({
+    data: data || [],
     columns: COLUMNS,
     state: {
       sorting,
@@ -119,7 +121,7 @@ export const PoolsTable: FC = () => {
 
   return (
     <>
-      <GenericTable<{ pair: Pair }>
+      <GenericTable<NonNullable<typeof data>[0]>
         table={table}
         loading={!pools && isValidating}
         HoverElement={isMd ? PairQuickHoverTooltip : undefined}
