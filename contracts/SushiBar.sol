@@ -4,7 +4,7 @@ pragma solidity >=0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/math/SafeMath.sol";
+import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 
 // SushiBar is the coolest bar in town. You come in with some Sushi, and leave with more! The longer you stay, the more Sushi you get.
 // This contract handles swapping to and from xSushi, SushiSwap's staking token.
@@ -32,7 +32,7 @@ contract SushiBar is ERC20("SushiBar", "xSUSHI"){
 
     // Enter the bar. Pay some SUSHIs. Earn some shares.
     // Locks Sushi and mints xSushi
-    function enter(uint256 _amount) public returns (uint256){
+    function enter(uint256 _amount) public{
         // Gets the amount of Sushi locked in the contract
         uint256 totalSushi = sushi.balanceOf(address(this));
         // Gets the amount of xSushi in existence
@@ -48,10 +48,10 @@ contract SushiBar is ERC20("SushiBar", "xSUSHI"){
         }
 
         // Creating and Appending the deposit in the array
-        Deposit memory _deposit;
-        _deposit.who = msg.sender;
-        _deposit.when = block.timestamp;
-        _deposit.amount = _amount;
+        Deposit memory _deposit = Deposit(msg.sender, block.timestamp, _amount);
+        // _deposit.who = msg.sender;
+        // _deposit.when = block.timestamp;
+        // _deposit.amount = _amount;
 
         deposits.push(_deposit);
 
@@ -60,8 +60,6 @@ contract SushiBar is ERC20("SushiBar", "xSUSHI"){
 
         // Lock the Sushi in the contract
         sushi.transferFrom(msg.sender, address(this), _amount);
-
-        return index;
     }
 
     // Retrive deposit details by index
